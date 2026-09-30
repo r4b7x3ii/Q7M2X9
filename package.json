@@ -12,18 +12,21 @@
     }
   },
   "bin": {
-    "q7m2x9": "./dist/cli.js"
+    "q7m2x9": "./dist/cli/index.js"
   },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
+  "sideEffects": false,
   "scripts": {
     "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
     "test": "tsx --test test/**/*.test.ts",
-    "demo": "tsx src/cli.ts --network visa --kind virtual --output card.svg",
-    "prepare": "npm run build"
+    "check": "npm run typecheck && npm test",
+    "demo": "tsx src/cli/index.ts --network visa --kind virtual --output card.svg",
+    "prepublishOnly": "npm run check && npm run build"
   },
   "engines": {
     "node": ">=22"
@@ -32,7 +35,7 @@
     "makeables": "^0.4.1"
   },
   "devDependencies": {
-    "@types/node": "^26.6.3",
+    "@types/node": "^22.20.3",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
   },
@@ -47,5 +50,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/r4b7x3ii/Q7M2X9.git"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
