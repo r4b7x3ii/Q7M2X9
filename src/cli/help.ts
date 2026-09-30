@@ -9,10 +9,9 @@ Options:
   --holder <name>    Cardholder name
   --issuer <name>    Issuer metadata
   --seed <value>     Reproducible output
-  --design <name>    Makeables card design
   --output <file>    .json or .png
   --list             Show supported values
   --help             Show this help
 
-PNG files are written to ./result and automatically get a new filename if one already exists.
+PNG files are rendered with react-credit-cards-2, written to ./result, and automatically get a new filename if one already exists.
 `;
