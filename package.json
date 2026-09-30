@@ -1,0 +1,35 @@
+{
+  "name": "q7m2x9",
+  "version": "0.1.0",
+  "description": "Mock payment card generator with SVG and PNG output for development and testing.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "q7m2x9": "./src/cli.js"
+  },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node src/cli.js --network visa --kind virtual --output card.svg"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "makeables": "^0.4.1"
+  },
+  "keywords": [
+    "mock",
+    "payment-card",
+    "testing",
+    "svg",
+    "png"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/r4b7x3ii/Q7M2X9.git"
+  }
+}
