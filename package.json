@@ -32,13 +32,21 @@
     "node": ">=22"
   },
   "dependencies": {
-    "makeables": "^0.4.1",
-    "sharp": "^0.35.5"
+    "puppeteer": "^25.12.0",
+    "react": "^19.0.0",
+    "react-credit-cards-2": "^1.2.0",
+    "react-dom": "^19.0.0"
   },
   "devDependencies": {
     "@types/node": "^22.20.3",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "tsx": "^4.23.15",
     "typescript": "^7.0.2"
+  },
+  "allowScripts": {
+    "esbuild": true,
+    "puppeteer": true
   },
   "keywords": [
     "mock",
