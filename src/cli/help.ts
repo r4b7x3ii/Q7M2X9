@@ -13,4 +13,6 @@ Options:
   --output <file>    .json or .png
   --list             Show supported values
   --help             Show this help
+
+PNG files are written to ./result and automatically get a new filename if one already exists.
 `;
