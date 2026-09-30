@@ -7,10 +7,10 @@ Options:
   --network <name>   Card network
   --kind <name>      Card kind
   --holder <name>    Cardholder name
-  --issuer <name>    Issuer label
+  --issuer <name>    Issuer metadata
   --seed <value>     Reproducible output
-  --theme <name>     Card theme
-  --output <file>    .json, .svg, or .png
+  --design <name>    Makeables card design
+  --output <file>    .json or .png
   --list             Show supported values
   --help             Show this help
 `;
