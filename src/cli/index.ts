@@ -43,16 +43,18 @@ if (!options.output) {
   process.exit(0);
 }
 
-const target = resolve(options.output);
-const extension = extname(target).toLowerCase();
+const extension = extname(options.output).toLowerCase();
+let written: string;
 
 if (extension === ".png") {
-  await renderCardPng(card, target, { design: options.design });
+  written = await renderCardPng(card, options.output, { design: options.design });
 } else if (extension === ".json") {
+  const target = resolve(options.output);
   await mkdir(dirname(target), { recursive: true });
   await writeFile(target, `${JSON.stringify(card, null, 2)}\n`, { flag: "wx" });
+  written = target;
 } else {
   throw new Error("Output must be .json or .png");
 }
 
-console.log(target);
+console.log(written);
