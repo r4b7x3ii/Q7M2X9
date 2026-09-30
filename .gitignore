@@ -4,4 +4,6 @@ coverage/
 *.png
 *.svg
 *.makeables.json
+result/*
+!result/.gitkeep
 .DS_Store
