@@ -1,4 +1,4 @@
-import { access, mkdir, writeFile } from "node:fs/promises";
+import { access, mkdir } from "node:fs/promises";
 import { dirname, resolve } from "node:path";
 
 export async function assertOutputMissing(file: string): Promise<string> {
@@ -14,11 +14,5 @@ export async function assertOutputMissing(file: string): Promise<string> {
   }
 
   await mkdir(dirname(target), { recursive: true });
-  return target;
-}
-
-export async function writeTextOutput(file: string, content: string): Promise<string> {
-  const target = await assertOutputMissing(file);
-  await writeFile(target, content, "utf8");
   return target;
 }
