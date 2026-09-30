@@ -1,7 +1,7 @@
 export { CARD_KINDS, NETWORKS } from "./catalog/index.js";
 export { generateCard, isLuhnValid } from "./core/index.js";
 export {
-  DEFAULT_CARD_DESIGN,
+  renderCardDocument,
   renderCardPng
 } from "./render/index.js";
 export type {
@@ -9,6 +9,5 @@ export type {
   CardNetwork,
   GenerateCardOptions,
   MockCard,
-  NetworkDefinition,
-  RenderOptions
+  NetworkDefinition
 } from "./types/index.js";
