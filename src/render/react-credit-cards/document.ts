@@ -1,11 +1,22 @@
 import { readFile } from "node:fs/promises";
 import { createRequire } from "node:module";
 import * as React from "react";
-import Cards from "react-credit-cards-2";
 import { renderToStaticMarkup } from "react-dom/server";
 import type { MockCard } from "../../types/index.js";
 
+interface CardComponentProps {
+  number: string;
+  name: string;
+  expiry: string;
+  cvc: string;
+  focused: "";
+}
+
 const require = createRequire(import.meta.url);
+const loaded = require("react-credit-cards-2") as
+  | React.ComponentType<CardComponentProps>
+  | { default: React.ComponentType<CardComponentProps> };
+const Cards = typeof loaded === "function" ? loaded : loaded.default;
 const stylesPath = require.resolve(
   "react-credit-cards-2/dist/es/styles-compiled.css"
 );
