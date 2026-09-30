@@ -5,4 +5,3 @@ export type {
   MockCard,
   NetworkDefinition
 } from "./card.js";
-export type { RenderOptions } from "./render.js";
