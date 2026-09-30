@@ -12,7 +12,7 @@ test("renders test markings and escapes content", () => {
 
   const svg = renderCardSvg(card);
 
-  assert.match(svg, /TEST CARD/);
+  assert.match(svg, /viewBox="0 0 1200 756"/);\n  assert.match(svg, /TEST CARD/);
   assert.match(svg, /NOT FOR PAYMENT/);
   assert.match(svg, /A &amp; B/);
 });
