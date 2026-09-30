@@ -4,7 +4,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import { dirname, extname, resolve } from "node:path";
 import { CARD_KINDS, NETWORKS } from "../catalog/index.js";
 import { generateCard } from "../core/index.js";
-import { DEFAULT_CARD_DESIGN, renderCardPng } from "../render/index.js";
+import { renderCardPng } from "../render/index.js";
 import { parseArguments } from "./arguments.js";
 import { HELP } from "./help.js";
 
@@ -20,8 +20,7 @@ if (options.list) {
     JSON.stringify(
       {
         networks: Object.keys(NETWORKS),
-        kinds: CARD_KINDS,
-        defaultDesign: DEFAULT_CARD_DESIGN
+        kinds: CARD_KINDS
       },
       null,
       2
@@ -47,7 +46,7 @@ const extension = extname(options.output).toLowerCase();
 let written: string;
 
 if (extension === ".png") {
-  written = await renderCardPng(card, options.output, { design: options.design });
+  written = await renderCardPng(card, options.output);
 } else if (extension === ".json") {
   const target = resolve(options.output);
   await mkdir(dirname(target), { recursive: true });
