@@ -1,4 +1,4 @@
 export {
-  DEFAULT_CARD_DESIGN,
+  renderCardDocument,
   renderCardPng
-} from "./makeables/index.js";
+} from "./react-credit-cards/index.js";
