@@ -1,6 +1,6 @@
 import { CARD_KINDS, NETWORKS } from "../catalog/index.js";
-import { listThemes } from "../render/index.js";
-import type { CardKind, CardNetwork, CardTheme } from "../types/index.js";
+import { DEFAULT_CARD_DESIGN } from "../render/index.js";
+import type { CardKind, CardNetwork } from "../types/index.js";
 
 export interface CliOptions {
   network: CardNetwork;
@@ -8,7 +8,7 @@ export interface CliOptions {
   holder?: string;
   issuer?: string;
   seed?: string;
-  theme: CardTheme;
+  design: string;
   output?: string;
   list: boolean;
   help: boolean;
@@ -48,7 +48,7 @@ export function parseArguments(args: string[]): CliOptions {
     holder: valueAfter(args, "--holder"),
     issuer: valueAfter(args, "--issuer"),
     seed: valueAfter(args, "--seed"),
-    theme: parseChoice(valueAfter(args, "--theme"), listThemes(), "midnight", "theme"),
+    design: valueAfter(args, "--design") ?? DEFAULT_CARD_DESIGN,
     output: valueAfter(args, "--output"),
     list: args.includes("--list"),
     help: args.includes("--help") || args.includes("-h")
