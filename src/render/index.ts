@@ -1,6 +1,5 @@
 import type { MockCard, RenderOptions } from "../types/index.js";
 import { writeTextOutput } from "./files.js";
-import { renderCardPng } from "./makeables/index.js";
 import { renderCardSvg } from "./svg/index.js";
 
 export { renderCardPng } from "./makeables/index.js";
